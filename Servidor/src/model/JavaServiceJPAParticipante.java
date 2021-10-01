@@ -1,7 +1,6 @@
-package servidor;
+package model;
 
-import estructural.Partido;
-import estructural.PartidoPK;
+import estructural.Participante;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -9,10 +8,10 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-public class JavaServiceJPAPartido {
+public class JavaServiceJPAParticipante {
     private final EntityManager em;
 
-    public JavaServiceJPAPartido() {
+    public JavaServiceJPAParticipante() {
         final EntityManagerFactory emf = Persistence.createEntityManagerFactory("Servidor-1");
         em = emf.createEntityManager();
     }
@@ -52,25 +51,22 @@ public class JavaServiceJPAPartido {
         return entity;
     }
 
-    public Partido persistPartido(Partido partido) {
-        em.persist(partido);
+    public Participante persistParticipante(Participante participante) {
+        em.persist(participante);
         commitTransaction();
-        return partido;
+        return participante;
     }
 
-    public Partido mergePartido(Partido partido) {
-        Partido entity = null;
-        entity = em.merge(partido);
+    public Participante mergeParticipante(Participante participante) {
+        Participante entity = null;
+        entity = em.merge(participante);
         commitTransaction();
         return entity;
     }
 
-    public void removePartido(Partido partido) {
-        partido =
-            em.find(Partido.class,
-                    new PartidoPK(partido.getParticipante().getId(), partido.getParticipante1().getId(),
-                                  partido.getMesa().getId_mesa()));
-        em.remove(partido);
+    public void removeParticipante(Participante participante) {
+        participante = em.find(Participante.class, participante.getId());
+        em.remove(participante);
         commitTransaction();
     }
 }
