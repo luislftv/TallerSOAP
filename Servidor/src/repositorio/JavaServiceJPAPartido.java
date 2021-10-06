@@ -1,6 +1,7 @@
-package model;
+package repositorio;
 
-import estructural.Mesa;
+import estructural.Partido;
+import estructural.PartidoPK;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -8,10 +9,10 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-public class JavaServiceJPAMesa {
+public class JavaServiceJPAPartido {
     private final EntityManager em;
 
-    public JavaServiceJPAMesa() {
+    public JavaServiceJPAPartido() {
         final EntityManagerFactory emf = Persistence.createEntityManagerFactory("Servidor-1");
         em = emf.createEntityManager();
     }
@@ -51,22 +52,25 @@ public class JavaServiceJPAMesa {
         return entity;
     }
 
-    public Mesa persistMesa(Mesa mesa) {
-        em.persist(mesa);
+    public Partido persistPartido(Partido partido) {
+        em.persist(partido);
         commitTransaction();
-        return mesa;
+        return partido;
     }
 
-    public Mesa mergeMesa(Mesa mesa) {
-        Mesa entity = null;
-        entity = em.merge(mesa);
+    public Partido mergePartido(Partido partido) {
+        Partido entity = null;
+        entity = em.merge(partido);
         commitTransaction();
         return entity;
     }
 
-    public void removeMesa(Mesa mesa) {
-        mesa = em.find(Mesa.class, mesa.getId_mesa());
-        em.remove(mesa);
+    public void removePartido(Partido partido) {
+        partido =
+            em.find(Partido.class,
+                    new PartidoPK(partido.getParticipante().getId(), partido.getParticipante1().getId(),
+                                  partido.getMesa().getId_mesa()));
+        em.remove(partido);
         commitTransaction();
     }
 }

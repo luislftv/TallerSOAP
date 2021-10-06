@@ -1,6 +1,9 @@
-package model;
+package repositorio;
 
-import estructural.Participante;
+import estructural.Mesa;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -8,10 +11,10 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-public class JavaServiceJPAParticipante {
+public class JavaServiceJPAMesa {
     private final EntityManager em;
 
-    public JavaServiceJPAParticipante() {
+    public JavaServiceJPAMesa() {
         final EntityManagerFactory emf = Persistence.createEntityManagerFactory("Servidor-1");
         em = emf.createEntityManager();
     }
@@ -51,22 +54,34 @@ public class JavaServiceJPAParticipante {
         return entity;
     }
 
-    public Participante persistParticipante(Participante participante) {
-        em.persist(participante);
+    public Mesa persistMesa(Mesa mesa) {
+        em.persist(mesa);
         commitTransaction();
-        return participante;
+        return mesa;
     }
 
-    public Participante mergeParticipante(Participante participante) {
-        Participante entity = null;
-        entity = em.merge(participante);
+    public Mesa mergeMesa(Mesa mesa) {
+        Mesa entity = null;
+        entity = em.merge(mesa);
         commitTransaction();
         return entity;
     }
 
-    public void removeParticipante(Participante participante) {
-        participante = em.find(Participante.class, participante.getId());
-        em.remove(participante);
+    public void removeMesa(Mesa mesa) {
+        mesa = em.find(Mesa.class, mesa.getId_mesa());
+        em.remove(mesa);
         commitTransaction();
     }
+    
+    public List<Mesa> listarMesas(){
+        List<Mesa> listaProductos= null;
+        
+        
+        Query query = em.createQuery("SELECT p FROM Mesa p");
+        listaProductos  = query.getResultList();
+        
+        return listaProductos;
+        
+    }
+    
 }
