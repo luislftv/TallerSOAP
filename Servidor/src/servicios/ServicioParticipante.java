@@ -1,5 +1,6 @@
 package servicios;
 
+import estructural.Mesa;
 import estructural.Participante;
 
 import java.util.List;
@@ -16,25 +17,35 @@ public class ServicioParticipante {
     }
     
     
-    public boolean crearMesa (Participante participante){
+    public boolean crearParticipante (Participante participante){
         try{jpaParticipante.persistParticipante(participante);}
         catch(Exception e){return false;}
         return true;
     }
     
     
-    public boolean actualizarMesa(Participante participante){
+    public boolean actualizarParticipante(Participante participante){
         try{jpaParticipante.mergeParticipante(participante);}
         catch(Exception e){return false;}
         return true;
         }
     
     
-    public boolean eliminarMesa(Participante participante){
+    public boolean eliminarParticipante(Participante participante){
         try{jpaParticipante.removeParticipante(participante);}
         catch(Exception e){return false;}
         return true;
         }
+    
+    public Participante buscarParticipanteId(Participante participante){
+        Participante participanteb = null;
+        try{participanteb = jpaParticipante.searchParticipante(participante);}
+        catch(Exception e){return null;}
+        return participanteb;
+        }
+    
+    
+    
     
     
     public List<Participante> listarTodosLosParticipantes(){

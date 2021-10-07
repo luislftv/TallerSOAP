@@ -73,6 +73,11 @@ public class JavaServiceJPAParticipante {
         commitTransaction();
     }
     
+    public Participante searchParticipante(Participante participante){
+        Participante participanteb = em.find(Participante.class, participante.getId());
+        return participanteb;
+        }
+    
     public List<Participante> listarParticipantes(){
         List<Participante> listaParticipantes= null;
      
