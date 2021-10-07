@@ -4,6 +4,8 @@ import estructural.Mesa;
 
 import estructural.Participante;
 
+import estructural.Partido;
+
 import java.util.List;
 
 import repositorio.JavaServiceJPAParticipante;
@@ -72,4 +74,26 @@ public class ServicioWebParticipante {
         }
         return participantes;
     }
+    
+    public Integer[] Estadisticas(Participante participante){
+        
+             return sp.Estadisticas(participante);
+        
+    }
+    
+    public List<Partido> listarPartidosDeUnParticipante(Participante participante){
+        
+        return sp.listarPartidosDeUnParticipante(participante);
+        
+    }
+    
+    public List<Participante> filtrarParticipantePorApodo(Participante participante){
+        
+        return sp.filtrarParticipantePorApodo(participante);
+    
+    }
+    
+    
+    
+    
 }

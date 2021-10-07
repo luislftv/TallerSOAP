@@ -3,6 +3,8 @@ package servicios;
 import estructural.Mesa;
 import estructural.Participante;
 
+import estructural.Partido;
+
 import java.util.List;
 
 import repositorio.JavaServiceJPAParticipante;
@@ -43,10 +45,7 @@ public class ServicioParticipante {
         catch(Exception e){return null;}
         return participanteb;
         }
-    
-    
-    
-    
+ 
     
     public List<Participante> listarTodosLosParticipantes(){
         List<Participante> participante = null;
@@ -59,5 +58,37 @@ public class ServicioParticipante {
         return participante;
     }
     
+    public Integer[] Estadisticas(Participante participante){
+        Integer [] res = null;
+        try{
+             res = jpaParticipante.EstadisticasNegrasYBlancas(participante);
+        }
+        catch (Exception e){
+            System.out.println("No hay nada");
+        }
+        return res;
+    }
     
+    public List<Partido> listarPartidosDeUnParticipante(Participante participante){
+        List<Partido> partidos = null;
+        try{
+             partidos = jpaParticipante.listarPartidosDeUnParticipante(participante);
+        }
+        catch (Exception e){
+            System.out.println("No hay nada");
+        }
+        return partidos;
+        
+    }
+    
+    public List<Participante> filtrarParticipantePorApodo(Participante participante){
+        List<Participante> participantes = null;
+        try{
+            participantes = jpaParticipante.filtrarParticipantePorApodo(participante);
+        }
+        catch (Exception e){
+            System.out.println("No hay nada");
+        }
+        return participantes;
+    }
 }

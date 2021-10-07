@@ -3,6 +3,8 @@ package repositorio;
 import estructural.Mesa;
 import estructural.Participante;
 
+import estructural.Partido;
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -77,6 +79,31 @@ public class JavaServiceJPAParticipante {
         Participante participanteb = em.find(Participante.class, participante.getId());
         return participanteb;
         }
+    
+    
+    public Integer[] EstadisticasNegrasYBlancas(Participante participante){
+        
+        Integer[] res = new Integer[2]; 
+        Query query1 = em.createQuery("Select count(*) from akira.partido where parcipante_1 ="+participante.getId());
+        res [0] = (Integer) query1.getResultList().get(0); 
+        Query query2 = em.createQuery("Select count(*) from akira.partido where parcipante_2 ="+participante.getId());
+        res [1] = (Integer) query2.getResultList().get(1);
+        
+        return res;
+    }
+    
+    public List<Partido> listarPartidosDeUnParticipante(Participante participante){
+        
+        Query query = em.createQuery("SELECT * FROM akira.partido where parcipante_1 ="+ participante.getId() +"or parcipante_2 ="+ participante.getId());
+        return query.getResultList();  
+    }
+    
+    
+    public List<Participante> filtrarParticipantePorApodo(Participante participante){
+        
+        Query query = em.createQuery("SELECT * FROM Participante where apodo LIKE '%"+participante.getApodo()+"%' ");
+        return query.getResultList();
+    }
     
     public List<Participante> listarParticipantes(){
         List<Participante> listaParticipantes= null;
