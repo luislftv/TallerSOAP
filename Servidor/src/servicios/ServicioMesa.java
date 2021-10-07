@@ -52,19 +52,31 @@ public class ServicioMesa {
         return true;
         }
     
-    /**
-     *Metodo que lista todas las mesas
-     * @return
-     */
-    public List<Mesa> listarTodasLasMesas(){
-        List<Mesa> mesas = null;
-        try{
-            mesas = jpaMesa.listarMesas();
+    public Mesa buscarMesaId(Mesa mesa){
+        Mesa mesar = null;
+        try{mesar = jpaMesa.searchMesa(mesa);}
+        catch(Exception e){return null;}
+        return mesar;
         }
-        catch (Exception e){
-            System.out.println("No hay nada");
+    
+        /**
+         *Metodo que lista todas las mesas
+         * @return
+         */
+        public List<Mesa> listarTodasLasMesas(){
+            List<Mesa> mesas = null;
+            try{
+                mesas = jpaMesa.listarMesas();
+            }
+            catch (Exception e){
+                System.out.println("No hay nada");
+            }
+            return mesas;
         }
-        return mesas;
+
+    
+    
     }
     
-}
+    
+

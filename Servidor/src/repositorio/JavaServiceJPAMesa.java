@@ -73,6 +73,12 @@ public class JavaServiceJPAMesa {
         commitTransaction();
     }
     
+    public Mesa searchMesa(Mesa mesa){
+        Mesa mesab = em.find(Mesa.class, mesa.getId_mesa());
+        return mesab;
+        }
+    
+    
     public List<Mesa> listarMesas(){
         List<Mesa> listaProductos= null;
         
