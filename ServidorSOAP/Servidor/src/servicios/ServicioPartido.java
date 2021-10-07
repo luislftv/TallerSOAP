@@ -16,21 +16,21 @@ public class ServicioPartido {
         this.jpaPartido = jpaPartido;    
     }
     
-    public boolean crearMesa (Partido partido){
+    public boolean crearPartido (Partido partido){
         try{jpaPartido.mergePartido(partido);}
         catch(Exception e){return false;}
         return true;
     }
     
     
-    public boolean actualizarMesa(Partido partido){
+    public boolean actualizarPartido(Partido partido){
         try{jpaPartido.mergePartido(partido);}
         catch(Exception e){return false;}
         return true;
         }
     
     
-    public boolean eliminarMesa(Partido partido){
+    public boolean eliminarPartido(Partido partido){
         try{jpaPartido.removePartido(partido);}
         catch(Exception e){return false;}
         return true;
@@ -47,6 +47,7 @@ public class ServicioPartido {
         }
         return partidos;
     }
+    
     
     
     

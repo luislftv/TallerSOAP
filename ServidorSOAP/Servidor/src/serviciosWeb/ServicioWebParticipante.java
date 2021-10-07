@@ -8,10 +8,15 @@ import estructural.Partido;
 
 import java.util.List;
 
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebService;
+
 import repositorio.JavaServiceJPAParticipante;
 
 import servicios.ServicioParticipante;
 
+@WebService(serviceName = "ServicioWebParticipanteServiceSW")
 public class ServicioWebParticipante {
     
     private final ServicioParticipante sp;
@@ -22,8 +27,9 @@ public class ServicioWebParticipante {
         JavaServiceJPAParticipante jpa = new JavaServiceJPAParticipante();
         sp = new ServicioParticipante(jpa);
     }
-    
-    public Integer crearParticipante(Participante participante){
+
+    @WebMethod
+    public Integer crearParticipante(@WebParam(name = "arg0") Participante participante){
         try{
             sp.crearParticipante(participante);
         }
@@ -32,8 +38,9 @@ public class ServicioWebParticipante {
         }
         return 0;
     }
-    
-    public Participante buscarParticipante(Participante participante){
+
+    @WebMethod
+    public Participante buscarParticipante(@WebParam(name = "arg0") Participante participante){
         try{
             participante = sp.buscarParticipanteId(participante);
         }
@@ -42,8 +49,9 @@ public class ServicioWebParticipante {
         }
         return participante;
     }
-    
-    public Integer eliminarParticipante(Participante participante){
+
+    @WebMethod
+    public Integer eliminarParticipante(@WebParam(name = "arg0") Participante participante){
         try{
             sp.eliminarParticipante(participante);
         }
@@ -52,8 +60,9 @@ public class ServicioWebParticipante {
         }
         return 0;
     }
-    
-    public Integer actualizarParticipante(Participante participante){
+
+    @WebMethod
+    public Integer actualizarParticipante(@WebParam(name = "arg0") Participante participante){
         try{
             sp.actualizarParticipante(participante);
         }
@@ -62,8 +71,9 @@ public class ServicioWebParticipante {
         }
         return 0;
     }
-    
-    
+
+
+    @WebMethod
     public List<Participante> listarParticipantes(){
         List<Participante> participantes = null;
         try{
@@ -74,20 +84,23 @@ public class ServicioWebParticipante {
         }
         return participantes;
     }
-    
-    public Integer[] Estadisticas(Participante participante){
+
+    @WebMethod
+    public Integer[] Estadisticas(@WebParam(name = "arg0") Participante participante){
         
              return sp.Estadisticas(participante);
         
     }
-    
-    public List<Partido> listarPartidosDeUnParticipante(Participante participante){
+
+    @WebMethod
+    public List<Partido> listarPartidosDeUnParticipante(@WebParam(name = "arg0") Participante participante){
         
         return sp.listarPartidosDeUnParticipante(participante);
         
     }
-    
-    public List<Participante> filtrarParticipantePorApodo(Participante participante){
+
+    @WebMethod
+    public List<Participante> filtrarParticipantePorApodo(@WebParam(name = "arg0") Participante participante){
         
         return sp.filtrarParticipantePorApodo(participante);
     

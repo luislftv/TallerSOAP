@@ -4,10 +4,15 @@ import estructural.Mesa;
 
 import java.util.List;
 
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebService;
+
 import repositorio.JavaServiceJPAMesa;
 
 import servicios.ServicioMesa;
 
+@WebService(serviceName = "ServicioWebMesaServiceSW")
 public class ServicioWebMesa {
     
     private final ServicioMesa sm;
@@ -18,8 +23,9 @@ public class ServicioWebMesa {
         JavaServiceJPAMesa jsjm = new JavaServiceJPAMesa();    
         sm = new ServicioMesa(jsjm);
     }
-    
-    public Integer crearMesa(Mesa mesa){
+
+    @WebMethod
+    public Integer crearMesa(@WebParam(name = "arg0") Mesa mesa){
         try{
             sm.crearMesa(mesa);
         }catch(Exception e){
@@ -27,8 +33,9 @@ public class ServicioWebMesa {
         }
         return 0;
     }
-    
-    public Integer actualizarMesa(Mesa mesa){
+
+    @WebMethod
+    public Integer actualizarMesa(@WebParam(name = "arg0") Mesa mesa){
         try{
             sm.actualizarMesa(mesa);
         }catch (Exception e){
@@ -37,8 +44,9 @@ public class ServicioWebMesa {
         }
         return 0;
     }
-    
-    public Integer eliminarMesa(Mesa mesa){
+
+    @WebMethod
+    public Integer eliminarMesa(@WebParam(name = "arg0") Mesa mesa){
         try{
             sm.eliminarMesa(mesa);
         }catch (Exception e){
@@ -47,8 +55,9 @@ public class ServicioWebMesa {
         }
         return 1;
     }
-    
-    public Mesa buscarMesa (Mesa mesa){
+
+    @WebMethod
+    public Mesa buscarMesa (@WebParam(name = "arg0") Mesa mesa){
         try{
             mesa = sm.buscarMesaId(mesa);
         }catch (Exception e){
@@ -56,7 +65,8 @@ public class ServicioWebMesa {
         }
         return mesa;
     }
-    
+
+    @WebMethod
     public List<Mesa> listarMesas(){
         List<Mesa> mesas = null;
         try{

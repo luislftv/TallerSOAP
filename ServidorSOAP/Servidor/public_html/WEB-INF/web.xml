@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+  <servlet>
+    <servlet-name>ServicioWebMesaPort</servlet-name>
+    <servlet-class>serviciosWeb.ServicioWebMesa</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>ServicioWebParticipantePort</servlet-name>
+    <servlet-class>serviciosWeb.ServicioWebParticipante</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>ServicioWebPartidoPort</servlet-name>
+    <servlet-class>serviciosWeb.ServicioWebPartido</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServicioWebMesaPort</servlet-name>
+    <url-pattern>/ServicioWebMesaPort</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServicioWebParticipantePort</servlet-name>
+    <url-pattern>/ServicioWebParticipantePort</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServicioWebPartidoPort</servlet-name>
+    <url-pattern>/ServicioWebPartidoPort</url-pattern>
+  </servlet-mapping>
+</web-app>

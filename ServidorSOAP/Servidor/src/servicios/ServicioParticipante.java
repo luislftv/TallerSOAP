@@ -20,6 +20,7 @@ public class ServicioParticipante {
     
     
     public boolean crearParticipante (Participante participante){
+        System.out.println(participante.toString());
         try{jpaParticipante.persistParticipante(participante);}
         catch(Exception e){return false;}
         return true;
