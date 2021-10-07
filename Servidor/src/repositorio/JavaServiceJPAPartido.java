@@ -1,7 +1,10 @@
 package repositorio;
 
+import estructural.Participante;
 import estructural.Partido;
 import estructural.PartidoPK;
+
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -72,5 +75,14 @@ public class JavaServiceJPAPartido {
                                   partido.getMesa().getId_mesa()));
         em.remove(partido);
         commitTransaction();
+    }
+
+    public List<Partido> listarPartidos() {
+        List<Partido> listaPartidos= null;
+        
+        Query query = em.createQuery("SELECT p FROM Participante p");
+        listaPartidos  = query.getResultList();
+        
+        return listaPartidos;
     }
 }

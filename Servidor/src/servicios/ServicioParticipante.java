@@ -1,7 +1,5 @@
 package servicios;
 
-import estructural.Mesa;
-
 import estructural.Participante;
 
 import java.util.List;
