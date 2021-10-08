@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:ns0="http://serviciosWeb/" targetNamespace="http://serviciosWeb/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="actualizarParticipante">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="arg0" type="ns0:participante" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="actualizarParticipanteResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="return" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="buscarParticipante">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="arg0" type="ns0:participante" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="buscarParticipanteResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="return" type="ns0:participante" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="crearParticipante">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="arg0" type="ns0:participante" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="crearParticipanteResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="return" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="eliminarParticipante">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="arg0" type="ns0:participante" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="eliminarParticipanteResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="return" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Estadisticas">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="arg0" type="ns0:participante" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="EstadisticasResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="filtrarParticipantePorApodo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="arg0" type="ns0:participante" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="filtrarParticipantePorApodoResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="ns0:participante" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="listarParticipantes" />
+  <xsd:complexType name="listarParticipantesResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="ns0:participante" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="listarPartidosDeUnParticipante">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="arg0" type="ns0:participante" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="listarPartidosDeUnParticipanteResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="ns0:partido" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="participante">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="apodo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="fecha_caducidad" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="fecha_inscripcion" type="xsd:dateTime" />
+      <xsd:element name="id" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="partidoList" nillable="true" type="ns0:partido" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="partidoList1" nillable="true" type="ns0:partido" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="partido">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="fecha_programada" type="xsd:dateTime" />
+      <xsd:element name="ganador" type="xsd:int" />
+      <xsd:element minOccurs="0" name="hora_fin" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="hora_inicio" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="mesa" type="ns0:mesa" />
+      <xsd:element minOccurs="0" name="participante" type="ns0:participante" />
+      <xsd:element minOccurs="0" name="participante1" type="ns0:participante" />
+      <xsd:element name="ronda" type="xsd:int" />
+      <xsd:element minOccurs="0" name="torneo" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="mesa">
+    <xsd:sequence>
+      <xsd:element name="id_mesa" type="xsd:int" />
+      <xsd:element minOccurs="0" name="localidad" type="xsd:string" />
+      <xsd:element minOccurs="0" name="nombre_lugar" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="partidoList2" nillable="true" type="ns0:partido" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="actualizarParticipante" type="ns0:actualizarParticipante" />
+  <xsd:element name="actualizarParticipanteResponse" type="ns0:actualizarParticipanteResponse" />
+  <xsd:element name="buscarParticipante" type="ns0:buscarParticipante" />
+  <xsd:element name="buscarParticipanteResponse" type="ns0:buscarParticipanteResponse" />
+  <xsd:element name="crearParticipante" type="ns0:crearParticipante" />
+  <xsd:element name="crearParticipanteResponse" type="ns0:crearParticipanteResponse" />
+  <xsd:element name="eliminarParticipante" type="ns0:eliminarParticipante" />
+  <xsd:element name="eliminarParticipanteResponse" type="ns0:eliminarParticipanteResponse" />
+  <xsd:element name="Estadisticas" type="ns0:Estadisticas" />
+  <xsd:element name="EstadisticasResponse" type="ns0:EstadisticasResponse" />
+  <xsd:element name="filtrarParticipantePorApodo" type="ns0:filtrarParticipantePorApodo" />
+  <xsd:element name="filtrarParticipantePorApodoResponse" type="ns0:filtrarParticipantePorApodoResponse" />
+  <xsd:element name="listarParticipantes" type="ns0:listarParticipantes" />
+  <xsd:element name="listarParticipantesResponse" type="ns0:listarParticipantesResponse" />
+  <xsd:element name="listarPartidosDeUnParticipante" type="ns0:listarPartidosDeUnParticipante" />
+  <xsd:element name="listarPartidosDeUnParticipanteResponse" type="ns0:listarPartidosDeUnParticipanteResponse" />
+</xsd:schema>
