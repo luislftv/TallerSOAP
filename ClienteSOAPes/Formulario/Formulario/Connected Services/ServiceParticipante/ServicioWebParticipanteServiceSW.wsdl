@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://serviciosWeb/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ServicioWebParticipanteServiceSW" targetNamespace="http://serviciosWeb/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:7101/Servidor-Servidor-context-root/ServicioWebParticipantePort?xsd=1" namespace="http://serviciosWeb/" />
+    </xsd:schema>
+  </types>
+  <message name="Estadisticas">
+    <part name="parameters" element="tns:Estadisticas" />
+  </message>
+  <message name="EstadisticasResponse">
+    <part name="parameters" element="tns:EstadisticasResponse" />
+  </message>
+  <message name="crearParticipante">
+    <part name="parameters" element="tns:crearParticipante" />
+  </message>
+  <message name="crearParticipanteResponse">
+    <part name="parameters" element="tns:crearParticipanteResponse" />
+  </message>
+  <message name="listarParticipantes">
+    <part name="parameters" element="tns:listarParticipantes" />
+  </message>
+  <message name="listarParticipantesResponse">
+    <part name="parameters" element="tns:listarParticipantesResponse" />
+  </message>
+  <message name="actualizarParticipante">
+    <part name="parameters" element="tns:actualizarParticipante" />
+  </message>
+  <message name="actualizarParticipanteResponse">
+    <part name="parameters" element="tns:actualizarParticipanteResponse" />
+  </message>
+  <message name="eliminarParticipante">
+    <part name="parameters" element="tns:eliminarParticipante" />
+  </message>
+  <message name="eliminarParticipanteResponse">
+    <part name="parameters" element="tns:eliminarParticipanteResponse" />
+  </message>
+  <message name="buscarParticipante">
+    <part name="parameters" element="tns:buscarParticipante" />
+  </message>
+  <message name="buscarParticipanteResponse">
+    <part name="parameters" element="tns:buscarParticipanteResponse" />
+  </message>
+  <message name="listarPartidosDeUnParticipante">
+    <part name="parameters" element="tns:listarPartidosDeUnParticipante" />
+  </message>
+  <message name="listarPartidosDeUnParticipanteResponse">
+    <part name="parameters" element="tns:listarPartidosDeUnParticipanteResponse" />
+  </message>
+  <message name="filtrarParticipantePorApodo">
+    <part name="parameters" element="tns:filtrarParticipantePorApodo" />
+  </message>
+  <message name="filtrarParticipantePorApodoResponse">
+    <part name="parameters" element="tns:filtrarParticipantePorApodoResponse" />
+  </message>
+  <portType name="ServicioWebParticipante">
+    <operation name="Estadisticas">
+      <input wsam:Action="http://serviciosWeb/ServicioWebParticipante/EstadisticasRequest" message="tns:Estadisticas" />
+      <output wsam:Action="http://serviciosWeb/ServicioWebParticipante/EstadisticasResponse" message="tns:EstadisticasResponse" />
+    </operation>
+    <operation name="crearParticipante">
+      <input wsam:Action="http://serviciosWeb/ServicioWebParticipante/crearParticipanteRequest" message="tns:crearParticipante" />
+      <output wsam:Action="http://serviciosWeb/ServicioWebParticipante/crearParticipanteResponse" message="tns:crearParticipanteResponse" />
+    </operation>
+    <operation name="listarParticipantes">
+      <input wsam:Action="http://serviciosWeb/ServicioWebParticipante/listarParticipantesRequest" message="tns:listarParticipantes" />
+      <output wsam:Action="http://serviciosWeb/ServicioWebParticipante/listarParticipantesResponse" message="tns:listarParticipantesResponse" />
+    </operation>
+    <operation name="actualizarParticipante">
+      <input wsam:Action="http://serviciosWeb/ServicioWebParticipante/actualizarParticipanteRequest" message="tns:actualizarParticipante" />
+      <output wsam:Action="http://serviciosWeb/ServicioWebParticipante/actualizarParticipanteResponse" message="tns:actualizarParticipanteResponse" />
+    </operation>
+    <operation name="eliminarParticipante">
+      <input wsam:Action="http://serviciosWeb/ServicioWebParticipante/eliminarParticipanteRequest" message="tns:eliminarParticipante" />
+      <output wsam:Action="http://serviciosWeb/ServicioWebParticipante/eliminarParticipanteResponse" message="tns:eliminarParticipanteResponse" />
+    </operation>
+    <operation name="buscarParticipante">
+      <input wsam:Action="http://serviciosWeb/ServicioWebParticipante/buscarParticipanteRequest" message="tns:buscarParticipante" />
+      <output wsam:Action="http://serviciosWeb/ServicioWebParticipante/buscarParticipanteResponse" message="tns:buscarParticipanteResponse" />
+    </operation>
+    <operation name="listarPartidosDeUnParticipante">
+      <input wsam:Action="http://serviciosWeb/ServicioWebParticipante/listarPartidosDeUnParticipanteRequest" message="tns:listarPartidosDeUnParticipante" />
+      <output wsam:Action="http://serviciosWeb/ServicioWebParticipante/listarPartidosDeUnParticipanteResponse" message="tns:listarPartidosDeUnParticipanteResponse" />
+    </operation>
+    <operation name="filtrarParticipantePorApodo">
+      <input wsam:Action="http://serviciosWeb/ServicioWebParticipante/filtrarParticipantePorApodoRequest" message="tns:filtrarParticipantePorApodo" />
+      <output wsam:Action="http://serviciosWeb/ServicioWebParticipante/filtrarParticipantePorApodoResponse" message="tns:filtrarParticipantePorApodoResponse" />
+    </operation>
+  </portType>
+  <binding name="ServicioWebParticipantePortBinding" type="tns:ServicioWebParticipante">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Estadisticas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="crearParticipante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarParticipantes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarParticipante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarParticipante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarParticipante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPartidosDeUnParticipante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="filtrarParticipantePorApodo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ServicioWebParticipanteServiceSW">
+    <port name="ServicioWebParticipantePort" binding="tns:ServicioWebParticipantePortBinding">
+      <soap:address location="http://localhost:7101/Servidor-Servidor-context-root/ServicioWebParticipantePort" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3BC2B27A-B2DA-4506-95F7-91C05DB26B62}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Formulario</RootNamespace>
+    <AssemblyName>Formulario</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\ServiceParticipante\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\ParticipanteControlador.cs" />
+    <Compile Include="Views\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\pActualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\pActualizar.Designer.cs">
+      <DependentUpon>pActualizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\pAdicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\pAdicionar.Designer.cs">
+      <DependentUpon>pAdicionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\parAdicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\parAdicionar.Designer.cs">
+      <DependentUpon>parAdicionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\parAtualziar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\parAtualziar.Designer.cs">
+      <DependentUpon>parAtualziar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\parConsultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\parConsultar.Designer.cs">
+      <DependentUpon>parConsultar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\parGrafico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\parGrafico.Designer.cs">
+      <DependentUpon>parGrafico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\parListar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\parListar.Designer.cs">
+      <DependentUpon>parListar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\pConcultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\pConcultar.Designer.cs">
+      <DependentUpon>pConcultar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\pEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\pEliminar.Designer.cs">
+      <DependentUpon>pEliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\pGrafico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\pGrafico.Designer.cs">
+      <DependentUpon>pGrafico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\pListar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\pListar.Designer.cs">
+      <DependentUpon>pListar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Views\pActualizar.resx">
+      <DependentUpon>pActualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\pConcultar.resx">
+      <DependentUpon>pConcultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\pEliminar.resx">
+      <DependentUpon>pEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\pGrafico.resx">
+      <DependentUpon>pGrafico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\pListar.resx">
+      <DependentUpon>pListar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\pAdicionar.resx">
+      <DependentUpon>pAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Connected Services\ServiceParticipante\Formulario.ServiceParticipante.actualizarParticipanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceParticipante\Formulario.ServiceParticipante.buscarParticipanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceParticipante\Formulario.ServiceParticipante.crearParticipanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceParticipante\Formulario.ServiceParticipante.eliminarParticipanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceParticipante\Formulario.ServiceParticipante.EstadisticasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceParticipante\Formulario.ServiceParticipante.filtrarParticipantePorApodoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceParticipante\Formulario.ServiceParticipante.listarParticipantesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceParticipante\Formulario.ServiceParticipante.listarPartidosDeUnParticipanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceParticipante\Formulario.ServiceParticipante.participante.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceParticipante\Formulario.ServiceParticipante.partido.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceParticipante\ServicioWebParticipantePort.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceParticipante\ServicioWebParticipanteServiceSW.wsdl" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceParticipante\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceParticipante\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceParticipante\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceParticipante\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
